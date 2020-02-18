@@ -24,7 +24,6 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 """
 import requests
-import urllib.request
 import os
 import sys
 base_path = tmp_global_obj["basepath"]
@@ -52,7 +51,7 @@ if module == "sendsms":
 
         res = requests.get(
             "http://api.labsmobile.com/get/send.php?username="+username+"&password="+password+"&msisdn="+number_+"&sender=SENDER&message="+message_+"")
-        print('RES1',res.content)
+        #print('RES1',res.content)
 
 
         res = res.text
@@ -63,7 +62,6 @@ if module == "sendsms":
         code.pop('subid')
 
         SetVar(var_,code)
-
 
     except Exception as e:
         PrintException()
